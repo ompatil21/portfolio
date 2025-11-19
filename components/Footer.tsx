@@ -1,30 +1,34 @@
 import { FaLocationArrow } from "react-icons/fa6";
-
 import { socialMedia } from "@/data";
 import MagicButton from "./MagicButton";
 
 const Footer = () => {
   return (
-    <footer className="w-full pt-20 pb-10" id="contact">
-      {/* background grid */}
-      <div className="w-full absolute left-0 -bottom-72 min-h-96">
+    <footer className="w-full pt-20 pb-10 relative overflow-hidden" id="contact">
+
+      {/* Background Grid */}
+      <div className="absolute left-0 bottom-0 w-full h-[380px] pointer-events-none">
         <img
           src="/footer-grid.svg"
           alt="grid"
-          className="w-full h-full opacity-50 "
+          className="w-full h-full opacity-40 object-cover"
         />
       </div>
 
-      <div className="flex flex-col items-center">
-        <h1 className="heading lg:max-w-[45vw]">
+      {/* Footer Content */}
+      <div className="flex flex-col items-center relative z-10">
+        <h1 className="heading lg:max-w-[45vw] text-center text-purple">
           Ready to take <span className="text-purple">your</span> digital
           presence to the next level?
         </h1>
-        <p className="text-white-200 md:mt-10 my-5 text-center">
-          Reach out to me today and let&apos;s discuss how I can help you
+
+        <p className="text-slate-300 md:mt-10 my-6 text-center max-w-[520px] leading-relaxed">
+          Reach out to me today and let’s discuss how I can help you
           achieve your goals.
         </p>
-        <a href="mailto:contact@jsmastery.pro">
+
+        {/* Button */}
+        <a href="mailto:ompatilcodes@gmail.com">
           <MagicButton
             title="Let's get in touch"
             icon={<FaLocationArrow />}
@@ -32,21 +36,52 @@ const Footer = () => {
           />
         </a>
       </div>
-      <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
-        <p className="md:text-base text-sm md:font-normal font-light">
-          Copyright © 2024 Adrian Hajdin
+
+      {/* Lower section */}
+      <div className="flex mt-16 md:flex-row flex-col justify-between items-center relative z-10 gap-6 md:gap-0">
+
+        {/* COPYRIGHT */}
+        <p className="md:text-base text-sm text-slate-400 font-light">
+          © {new Date().getFullYear()} Built with ❤️ by OM
         </p>
 
+        {/* SOCIAL ICONS */}
         <div className="flex items-center md:gap-3 gap-6">
           {socialMedia.map((info) => (
-            <div
+            <a
               key={info.id}
-              className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
+              href={info.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group"
             >
-              <img src={info.img} alt="icons" width={20} height={20} />
-            </div>
+              <div
+                className="
+          w-11 h-11 
+          cursor-pointer 
+          flex justify-center items-center 
+          backdrop-blur-xl 
+          bg-slate-900/60 
+          rounded-xl 
+          border border-slate-700/50
+          shadow-[0_0_10px_rgba(88,28,135,0.25)]
+          transition-all duration-300
+          hover:border-purple-400/60 
+          hover:shadow-[0_0_18px_rgba(168,85,247,0.6)]
+        "
+              >
+                <img
+                  src={info.img}
+                  alt="icons"
+                  width={22}
+                  height={22}
+                  className="group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+            </a>
           ))}
         </div>
+
       </div>
     </footer>
   );

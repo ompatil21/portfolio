@@ -8,9 +8,13 @@ export const navItems = [
 export const gridItems = [
   {
     id: 1,
-    title: "I prioritize client collaboration, fostering open communication ",
-    description: "",
-    className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
+    title:
+      "Full Stack Developer building production-grade apps with React/Next.js, Node.js, and TypeScript.",
+    description:
+      "Focused on clean architecture, scalable performance, and reliable delivery in complex digital projects.",
+    // Big hero card on the left
+    className:
+      "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
     titleClassName: "justify-end",
     img: "/b1.svg",
@@ -18,8 +22,10 @@ export const gridItems = [
   },
   {
     id: 2,
-    title: "I'm very flexible with time zone communications",
-    description: "",
+    title: "Open to full-time roles across Australia",
+    description:
+      "Comfortable collaborating across time zones in Agile, remote and hybrid teams.",
+    // Top-right card with globe
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
     titleClassName: "justify-start",
@@ -29,7 +35,9 @@ export const gridItems = [
   {
     id: 3,
     title: "My tech stack",
-    description: "I constantly try to improve",
+    description:
+      "TypeScript, React, Next.js, Node.js (Express), PostgreSQL, MySQL, SQL Server, MongoDB, AWS, Docker, CI/CD.",
+    // Middle-left tech chips card
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
     titleClassName: "justify-center",
@@ -38,19 +46,22 @@ export const gridItems = [
   },
   {
     id: 4,
-    title: "Tech enthusiast with a passion for development.",
-    description: "",
+    title: "Swinburne Master of IT – Mobile & Cloud Computing",
+    description:
+      "Strong foundation in software engineering, cloud-native systems, and modern web architectures.",
+    // Middle-right education card
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
     titleClassName: "justify-start",
     img: "/grid.svg",
     spareImg: "/b4.svg",
   },
-
   {
     id: 5,
-    title: "Currently building a JS Animation library",
-    description: "The Inside Scoop",
+    title: "Currently building PropCalc, AI Feedback, and Security Dashboards",
+    description:
+      "Real-world projects focused on analytics, automation, and secure, scalable backends.",
+    // Bottom-left projects card
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
     titleClassName: "justify-center md:justify-start lg:justify-center",
@@ -59,8 +70,10 @@ export const gridItems = [
   },
   {
     id: 6,
-    title: "Do you want to start a project together?",
-    description: "",
+    title: "Do you want to build something together?",
+    description:
+      "Reach me at ompatilcodes@gmail.com or via LinkedIn: linkedin.com/in/om-patil21",
+    // Bottom-right CTA card
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
     titleClassName: "justify-center md:max-w-full max-w-60 text-center",
@@ -72,146 +85,154 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "3D Solar System Planets to Explore",
-    des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
+    title: "PropCalc – Investment ROI Platform",
+    des: "Data-driven property investment platform with Next.js front-end and modular Node.js REST APIs for ROI, cash flow, and tax analysis.",
     img: "/p1.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "/ui.earth.com",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/c.svg"],
+    link: "https://github.com/ompatil21",
   },
   {
     id: 2,
-    title: "Yoom - Video Conferencing App",
-    des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
+    title: "AI-Powered Feedback Platform",
+    des: "End-to-end feedback analysis tool using React Native, Node.js, Flask microservices, and AWS Lambda for real-time sentiment and insights.",
     img: "/p2.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "/ui.yoom.com",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/c.svg"],
+    link: "https://github.com/ompatil21",
   },
   {
     id: 3,
-    title: "AI Image SaaS - Canva Application",
-    des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
+    title: "Malware & URL Detection Dashboard",
+    des: "Full-stack security dashboard with React, Node.js, and MongoDB, integrating AWS S3 triggers and Lambda for automated scanning and alerting.",
     img: "/p3.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "/ui.aiimg.com",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/c.svg"],
+    link: "https://github.com/ompatil21",
   },
   {
     id: 4,
-    title: "Animated Apple Iphone 3D Website",
-    des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
+    title: "Cloud & DevOps Automation",
+    des: "CI/CD pipelines and containerized services using GitHub Actions, Jenkins, Docker, and AWS ECS/Lambda to streamline deployments.",
     img: "/p4.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "/ui.apple.com",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/c.svg"],
+    link: "https://github.com/ompatil21",
   },
 ];
 
 export const testimonials = [
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "I’m currently collecting testimonials from managers, teammates, and collaborators. In the meantime, this portfolio highlights the impact and outcomes of my recent projects.",
+    name: "Testimonials coming soon",
+    title: "",
   },
 ];
-
 export const companies = [
   {
     id: 1,
-    name: "cloudinary",
-    img: "/cloud.svg",
-    nameImg: "/cloudName.svg",
+    name: "AWS",
+    img: "aws.svg",
+    label: "AWS",
   },
   {
     id: 2,
-    name: "appwrite",
-    img: "/app.svg",
-    nameImg: "/appName.svg",
+    name: "Hugging Face",
+    img: "/hf.svg",
+    label: "Hugging Face",
   },
   {
     id: 3,
-    name: "HOSTINGER",
-    img: "/host.svg",
-    nameImg: "/hostName.svg",
-  },
-  {
-    id: 4,
-    name: "stream",
-    img: "/s.svg",
-    nameImg: "/streamName.svg",
+    name: "Express.js",
+    img: "/express.svg",
+    label: "Express.js",
+    imgClassName: "invert",
   },
   {
     id: 5,
-    name: "docker.",
+    name: "Docker",
     img: "/dock.svg",
-    nameImg: "/dockerName.svg",
+    label: "docker",
+  },
+  {
+    id: 6,
+    name: "React",
+    img: "/react.svg",
+    label: "React",
+  },
+  {
+    id: 7,
+    name: "Next.js",
+    img: "/next.svg",
+    label: "Next.js",
+  },
+  {
+    id: 8,
+    name: "MongoDB",
+    img: "/mongo.svg",
+    label: "MongoDB",
+  },
+  {
+    id: 9,
+    name: "Flask",
+    img: "/flask.svg",
+    label: "Flask",
+    imgClassName: "invert",
+  },
+  {
+    id: 10,
+    name: "PostgreSQL",
+    img: "/postgres.png",
+    label: "PostgreSQL",
+  },
+  {
+    id: 11,
+    name: "Node.js",
+    img: "/node.svg", 
+    label: "Node.js",
+    //imgclassName: "invert",
   },
 ];
 
 export const workExperience = [
   {
     id: 1,
-    title: "Frontend Engineer Intern",
-    desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
+    title: "Software Developer",
+    desc: "Delivered enterprise SaaS features using React, Node.js, TypeScript, and SQL databases, with a focus on performance and maintainability.",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
   },
   {
     id: 2,
-    title: "Mobile App Dev - JSM Tech",
-    desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
-    className: "md:col-span-2", // change to md:col-span-2
+    title: "Backend & DevOps Delivery",
+    desc: "Built and optimized REST APIs, automated CI/CD with GitHub Actions and Jenkins, and deployed containerized services on AWS ECS and Lambda.",
+    className: "md:col-span-2",
     thumbnail: "/exp2.svg",
   },
   {
     id: 3,
-    title: "Freelance App Dev Project",
-    desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
-    className: "md:col-span-2", // change to md:col-span-2
+    title: "Master of IT – Swinburne University of Technology",
+    desc: "Specialised in Mobile & Cloud Computing with project-based learning in full-stack, cloud, and system design.",
+    className: "md:col-span-2",
     thumbnail: "/exp3.svg",
   },
   {
     id: 4,
-    title: "Lead Frontend Developer",
-    desc: "Developed and maintained user-facing features using modern frontend technologies.",
+    title: "Bachelor of Computer Engineering",
+    desc: "Dr. Babasaheb Ambedkar Technological University, India (2018–2022). Built strong fundamentals in CS and software engineering.",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
   },
 ];
 
+
 export const socialMedia = [
   {
     id: 1,
     img: "/git.svg",
+    url: "https://github.com/ompatil21",
   },
   {
     id: 2,
-    img: "/twit.svg",
-  },
-  {
-    id: 3,
     img: "/link.svg",
+    url: "https://www.linkedin.com/in/om-patil21",
   },
+
 ];

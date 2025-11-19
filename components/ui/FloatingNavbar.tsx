@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import {
   motion,
@@ -22,23 +23,17 @@ export const FloatingNav = ({
 }) => {
   const { scrollYProgress } = useScroll();
 
-  // set true for the initial state so that nav bar is visible in the hero section
+  // visible in hero initially
   const [visible, setVisible] = useState(true);
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
-    // Check if current is not undefined and is a number
     if (typeof current === "number") {
-      let direction = current! - scrollYProgress.getPrevious()!;
+      const direction = current - (scrollYProgress.getPrevious() ?? 0);
 
       if (scrollYProgress.get() < 0.05) {
-        // also set true for the initial state
         setVisible(true);
       } else {
-        if (direction < 0) {
-          setVisible(true);
-        } else {
-          setVisible(false);
-        }
+        setVisible(direction < 0);
       }
     }
   });
@@ -46,50 +41,91 @@ export const FloatingNav = ({
   return (
     <AnimatePresence mode="wait">
       <motion.div
-        initial={{
-          opacity: 1,
-          y: -100,
-        }}
+        initial={{ opacity: 0, y: -24 }}
         animate={{
-          y: visible ? 0 : -100,
+          y: visible ? 0 : -24,
           opacity: visible ? 1 : 0,
         }}
-        transition={{
-          duration: 0.2,
-        }}
+        exit={{ opacity: 0, y: -24 }}
+        transition={{ duration: 0.25, ease: "easeOut" }}
         className={cn(
-          // change rounded-full to rounded-lg
-          // remove dark:border-white/[0.2] dark:bg-black bg-white border-transparent
-          // change  pr-2 pl-8 py-2 to px-10 py-5
-          "flex max-w-fit md:min-w-[70vw] lg:min-w-fit fixed z-[5000] top-10 inset-x-0 mx-auto px-10 py-5 rounded-lg border border-black/.1 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] items-center justify-center space-x-4",
+          "fixed top-6 inset-x-0 z-[5000] mx-auto flex items-center justify-center",
           className
         )}
-        style={{
-          backdropFilter: "blur(16px) saturate(180%)",
-          backgroundColor: "rgba(17, 25, 40, 0.75)",
-          borderRadius: "12px",
-          border: "1px solid rgba(255, 255, 255, 0.125)",
-        }}
       >
-        {navItems.map((navItem: any, idx: number) => (
-          <Link
-            key={`link=${idx}`}
-            href={navItem.link}
+        {/* Outer gradient ring */}
+        <div
+          className="
+            relative max-w-fit md:min-w-[70vw] lg:min-w-fit
+            rounded-2xl p-[1px]
+            bg-gradient-to-r from-purple-500/60 via-cyan-400/40 to-purple-500/60
+            shadow-[0_0_40px_rgba(15,23,42,0.9)]
+          "
+        >
+          {/* Inner glass container */}
+          <div
             className={cn(
-              "relative dark:text-neutral-50 items-center  flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
+              "flex items-center justify-center space-x-2 md:space-x-4",
+              "px-4 md:px-8 py-2.5 md:py-3.5 rounded-2xl",
+              "border border-white/10 bg-slate-950/90",
+              "shadow-lg shadow-black/40",
+              "backdrop-blur-xl backdrop-saturate-150"
             )}
           >
-            <span className="block sm:hidden">{navItem.icon}</span>
-            {/* add !cursor-pointer */}
-            {/* remove hidden sm:block for the mobile responsive */}
-            <span className=" text-sm !cursor-pointer">{navItem.name}</span>
-          </Link>
-        ))}
-        {/* remove this login btn */}
-        {/* <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
-          <span>Login</span>
-          <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
-        </button> */}
+            {navItems.map((navItem, idx) => (
+              <Link
+                key={`link-${idx}`}
+                href={navItem.link}
+                className="group relative flex items-center gap-1 md:gap-2 px-3 py-1.5 rounded-full"
+              >
+                {/* Icon (shown on all, smaller on desktop) */}
+                {navItem.icon && (
+                  <span className="text-sm md:text-base text-slate-300 group-hover:text-white transition-colors">
+                    {navItem.icon}
+                  </span>
+                )}
+
+                {/* Label */}
+                <span
+                  className={cn(
+                    "text-xs md:text-sm font-medium",
+                    "text-slate-200 group-hover:text-white",
+                    "transition-colors"
+                  )}
+                >
+                  {navItem.name}
+                </span>
+
+                {/* Hover background pill */}
+                <span
+                  className="
+                    pointer-events-none
+                    absolute inset-0
+                    rounded-full
+                    bg-white/5
+                    opacity-0
+                    group-hover:opacity-100
+                    transition-opacity duration-200
+                  "
+                />
+
+                {/* Underline glow */}
+                <span
+                  className="
+                    pointer-events-none
+                    absolute -bottom-1.5 left-4 right-4
+                    h-[2px]
+                    bg-gradient-to-r from-purple-400 via-cyan-300 to-purple-400
+                    opacity-0 scale-x-50
+                    group-hover:opacity-100 group-hover:scale-x-100
+                    origin-center
+                    transition-all duration-200
+                  "
+                />
+              </Link>
+            ))}
+          </div>
+        </div>
       </motion.div>
     </AnimatePresence>
   );
