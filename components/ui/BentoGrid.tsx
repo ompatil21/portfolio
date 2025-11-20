@@ -180,7 +180,7 @@ export const BentoGridItem = ({
           {/* Tech stack chips */}
           {isTechCard && (
             <div className="pointer-events-none absolute right-4 bottom-5 lg:right-6 lg:bottom-7 
-  flex w-fit gap-3 lg:gap-4 z-40">
+              flex w-fit gap-3 lg:gap-4 z-40">
 
               {/* Left column */}
               <div className="flex flex-col gap-2 lg:gap-3">
@@ -188,13 +188,13 @@ export const BentoGridItem = ({
                   <span
                     key={item}
                     className="
-            rounded-xl px-3 py-1.5 lg:px-3 lg:py-2.5
-            text-xs lg:text-sm font-medium
-            text-[#E4ECFF]
-            bg-[#10132E]/90 border border-white/10
-            shadow-[0_10px_25px_rgba(15,23,42,0.9)]
-            backdrop-blur-sm whitespace-nowrap
-          "
+                      rounded-xl px-3 py-1.5 lg:px-3 lg:py-2.5
+                      text-xs lg:text-sm font-medium
+                      text-[#E4ECFF]
+                      bg-[#10132E]/90 border border-white/10
+                      shadow-[0_10px_25px_rgba(15,23,42,0.9)]
+                      backdrop-blur-sm whitespace-nowrap
+                  "
                   >
                     {item}
                   </span>
@@ -212,13 +212,13 @@ export const BentoGridItem = ({
                   <span
                     key={item}
                     className="
-            rounded-xl px-3 py-1.5 lg:px-3 lg:py-2.5
-            text-xs lg:text-sm font-medium
-            text-[#E4ECFF]
-            bg-[#10132E]/90 border border-white/10
-            shadow-[0_10px_25px_rgba(15,23,42,0.9)]
-            backdrop-blur-sm whitespace-nowrap
-          "
+                      rounded-xl px-3 py-1.5 lg:px-3 lg:py-2.5
+                      text-xs lg:text-sm font-medium
+                      text-[#E4ECFF]
+                      bg-[#10132E]/90 border border-white/10
+                      shadow-[0_10px_25px_rgba(15,23,42,0.9)]
+                      backdrop-blur-sm whitespace-nowrap
+                    "
                   >
                     {item}
                   </span>
