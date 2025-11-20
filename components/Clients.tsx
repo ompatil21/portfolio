@@ -4,6 +4,8 @@ import React from "react";
 import { companies, testimonials } from "@/data";
 import { InfiniteMovingCards } from "./ui/InfiniteCards";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
+
 
 const Clients = () => {
   return (
@@ -49,15 +51,18 @@ const Clients = () => {
                     {/* Icon */}
                     <div className="relative flex items-center justify-center h-9 w-9">
                       <div className="absolute inset-0 rounded-full bg-cyan-400/25 blur-md" />
-                      <img
+                      <Image
                         src={company.img}
                         alt={company.name}
+                        width={40}
+                        height={40}
                         className={cn(
                           "relative h-7 md:h-9 w-auto object-contain",
                           company.imgClassName
                         )}
                       />
                     </div>
+
 
                     {/* Label */}
                     {company.label && (

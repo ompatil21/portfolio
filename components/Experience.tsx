@@ -1,9 +1,8 @@
-
-
 import React from "react";
-
 import { workExperience } from "@/data";
 import { Button } from "./ui/MovingBorders";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 const Experience = () => {
   return (
@@ -38,10 +37,12 @@ const Experience = () => {
             "
           >
             <div className="flex lg:flex-row flex-col lg:items-center p-3 py-6 md:p-5 lg:p-8 gap-4">
-              <img
+              <Image
                 src={card.thumbnail}
                 alt={card.title}
-                className="lg:w-24 md:w-20 w-16 h-auto object-contain drop-shadow-xl"
+                width={96}
+                height={96}
+                className={cn("lg:w-24 md:w-20 w-16 h-auto object-contain drop-shadow-xl")}
               />
 
               <div className="lg:ms-5">

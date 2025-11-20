@@ -1,6 +1,6 @@
 export const navItems = [
-  { name: "About", link: "#about" },
-  { name: "Projects", link: "#projects" },
+  { name: "About", link: "#projects"},
+  { name: "Projects", link: "#about"},
   { name: "Testimonials", link: "#testimonials" },
   { name: "Contact", link: "#contact" },
 ];
@@ -12,9 +12,9 @@ export const gridItems = [
       "Full Stack Developer building production-grade apps with React/Next.js, Node.js, and TypeScript.",
     description:
       "Focused on clean architecture, scalable performance, and reliable delivery in complex digital projects.",
-    // Big hero card on the left
+    // Big hero card on the left – 2 rows on desktop, full width on md
     className:
-      "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
+      "md:col-span-6 lg:col-span-3 lg:row-span-2 lg:min-h-[26rem]",
     imgClassName: "w-full h-full",
     titleClassName: "justify-end",
     img: "/b1.svg",
@@ -25,32 +25,32 @@ export const gridItems = [
     title: "Open to full-time roles across Australia",
     description:
       "Comfortable collaborating across time zones in Agile, remote and hybrid teams.",
-    // Top-right card with globe
-    className: "lg:col-span-2 md:col-span-3 md:row-span-2",
+    className: "md:col-span-6 lg:col-span-2",
     imgClassName: "",
     titleClassName: "justify-start",
     img: "",
     spareImg: "",
   },
-  {
-    id: 3,
-    title: "My tech stack",
-    description:
-      "TypeScript, React, Next.js, Node.js (Express), PostgreSQL, MySQL, SQL Server, MongoDB, AWS, Docker, CI/CD.",
-    // Middle-left tech chips card
-    className: "lg:col-span-2 md:col-span-3 md:row-span-2",
-    imgClassName: "",
-    titleClassName: "justify-center",
-    img: "",
-    spareImg: "",
-  },
+{
+  id: 3,
+  title: "My tech stack",
+  description:
+    "TypeScript, React, Next.js, Node.js (Express), PostgreSQL, MySQL, SQL Server, MongoDB, AWS, Docker, CI/CD.",
+  className:
+    "md:col-span-3 md:col-start-4 lg:col-span-2 lg:col-start-4 flex flex-col justify-center",
+  imgClassName: "",
+  titleClassName: "justify-center",
+  img: "",
+  spareImg: "",
+},
+
   {
     id: 4,
     title: "Swinburne Master of IT – Mobile & Cloud Computing",
     description:
       "Strong foundation in software engineering, cloud-native systems, and modern web architectures.",
-    // Middle-right education card
-    className: "lg:col-span-2 md:col-span-3 md:row-span-1",
+    // Row below hero – left side
+    className: "md:col-span-6 lg:col-span-3",
     imgClassName: "",
     titleClassName: "justify-start",
     img: "/grid.svg",
@@ -61,8 +61,8 @@ export const gridItems = [
     title: "Currently building PropCalc, AI Feedback, and Security Dashboards",
     description:
       "Real-world projects focused on analytics, automation, and secure, scalable backends.",
-    // Bottom-left projects card
-    className: "md:col-span-3 md:row-span-2",
+    // Row below hero – right side
+    className: "md:col-span-6 lg:col-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
     titleClassName: "justify-center md:justify-start lg:justify-center",
     img: "/b5.svg",
@@ -73,8 +73,8 @@ export const gridItems = [
     title: "Do you want to build something together?",
     description:
       "Reach me at ompatilcodes@gmail.com or via LinkedIn: linkedin.com/in/om-patil21",
-    // Bottom-right CTA card
-    className: "lg:col-span-2 md:col-span-3 md:row-span-1",
+    // Full-width CTA at the bottom
+    className: "md:col-span-6 lg:col-span-5",
     imgClassName: "",
     titleClassName: "justify-center md:max-w-full max-w-60 text-center",
     img: "",
