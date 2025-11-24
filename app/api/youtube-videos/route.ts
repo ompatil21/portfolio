@@ -8,8 +8,7 @@ export async function GET() {
   const apiKey = process.env.YT_API_KEY;
   const channelId = process.env.YT_CHANNEL_ID; // we’ll still log this
 
-  console.log("YT_API_KEY =", apiKey);
-  console.log("YT_CHANNEL_ID =", channelId);
+
 
   if (!apiKey) {
     console.warn("Missing YT_API_KEY env var");
