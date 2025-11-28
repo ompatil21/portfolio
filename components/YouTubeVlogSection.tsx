@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import axios from "axios";
 import { cn } from "@/lib/utils";
 
 type Video = {
@@ -19,9 +20,9 @@ const YouTubeVlogSection = () => {
     useEffect(() => {
         const fetchVideos = async () => {
             try {
-                const res = await fetch("/api/youtube-videos");
-                const data = await res.json();
-                setVideos(data.videos || []);
+                const res = await axios.get("/api/youtube-videos");
+                const data = res.data;
+                setVideos(data?.videos || []);
             } catch (err) {
                 console.error("Failed to load YouTube videos", err);
             } finally {
