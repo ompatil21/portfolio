@@ -1,15 +1,15 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
-import Lottie from "react-lottie";
+import Image from "next/image";
+import Lottie from "lottie-react";
 
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import GridGlobe from "./GridGlobe";
 import animationData from "@/data/confetti.json";
 import MagicButton from "../MagicButton";
-import Image from "next/image";
 
 const LEFT_STACK = ["ReactJS", "Express", "TypeScript"];
 const RIGHT_STACK = ["Flask", "AWS", "MongoDB"];
@@ -60,18 +60,6 @@ export const BentoGridItem = ({
 
   const [copied, setCopied] = useState(false);
 
-  const lottieOptions = useMemo(
-    () => ({
-      loop: copied,
-      autoplay: copied,
-      animationData,
-      rendererSettings: {
-        preserveAspectRatio: "xMidYMid slice",
-      },
-    }),
-    [copied]
-  );
-
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(EMAIL);
@@ -90,11 +78,8 @@ export const BentoGridItem = ({
         "shadow-[0_18px_45px_rgba(15,23,42,0.8)]",
         // gradient background to match hero & projects
         "bg-[radial-gradient(circle_at_top,_rgba(148,163,255,0.18),transparent_55%),_linear-gradient(135deg,#04071D,#0C0E23)]",
-
         className
-
       )}
-
     >
       <div className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 group-hover/bento:opacity-100 transition-opacity duration-500 z-0">
         <div className="h-full w-full rounded-3xl animate-[spin_6s_linear_infinite] bg-[conic-gradient(from_120deg_at_50%_50%,#E2CBFF_0%,#393BB2_35%,#10132E_70%,#E2CBFF_100%)] blur-[1.5px] opacity-70" />
@@ -104,7 +89,6 @@ export const BentoGridItem = ({
       <div className={cn(isEmailCard && "flex justify-center", "h-full")}>
         <div className="absolute inset-0 h-full w-full">
           {img && (
-
             <Image
               src={img}
               alt={img}
@@ -126,7 +110,6 @@ export const BentoGridItem = ({
           )}
         >
           {spareImg && (
-
             <Image
               src={spareImg}
               alt={spareImg}
@@ -179,9 +162,10 @@ export const BentoGridItem = ({
 
           {/* Tech stack chips */}
           {isTechCard && (
-            <div className="pointer-events-none absolute right-4 bottom-5 lg:right-6 lg:bottom-7 
-              flex w-fit gap-3 lg:gap-4 z-40">
-
+            <div
+              className="pointer-events-none absolute right-4 bottom-5 lg:right-6 lg:bottom-7 
+              flex w-fit gap-3 lg:gap-4 z-40"
+            >
               {/* Left column */}
               <div className="flex flex-col gap-2 lg:gap-3">
                 {LEFT_STACK.map((item) => (
@@ -227,18 +211,22 @@ export const BentoGridItem = ({
             </div>
           )}
 
-
-
           {/* Email CTA */}
           {isEmailCard && (
             <div className="relative mt-5">
+              {/* Confetti */}
               <div
                 className={cn(
                   "pointer-events-none absolute -bottom-5 right-0",
                   copied ? "block" : "hidden"
                 )}
               >
-                <Lottie options={lottieOptions} height={200} width={400} />
+                <Lottie
+                  animationData={animationData}
+                  loop={copied}
+                  autoplay={copied}
+                  style={{ width: 400, height: 200 }}
+                />
               </div>
 
               <MagicButton
